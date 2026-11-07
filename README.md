@@ -1,7 +1,5 @@
 # Network Routing and Resilience Lab
 
-<img width="1774" height="1282" alt="image" src="https://github.com/user-attachments/assets/d76017be-a596-4b45-8ce2-147deeb6de78" />
-
 
 ## Overview
 
@@ -11,24 +9,7 @@ R1, R2, and R3 are in AS 65001. R4 is in AS 65002. OSPF and IS-IS exchange route
 
 ## Topology
 
-~~~text
-                 AS 65001
-            +----------------+
-            |                |
-            R1------R2       |
-             \      / \      |
-              \    /   \     |
-               R3------------+
-               | \          /
-               |  \        /
-          eBGP |   \eBGP  /
-               |    \    /
-               R4-----R1
-                 AS 65002
-
-R1-R2-R3 form an internal triangle.
-R3-R4 and R1-R4 are external BGP links.
-~~~
+<img width="1774" height="1282" alt="image" src="https://github.com/user-attachments/assets/d76017be-a596-4b45-8ce2-147deeb6de78" />
 
 ### Address plan
 
