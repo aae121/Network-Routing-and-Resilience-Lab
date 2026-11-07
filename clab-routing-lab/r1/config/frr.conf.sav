@@ -1,0 +1,47 @@
+frr version 10.7.1_git
+frr defaults traditional
+hostname r1
+domainname localdomain
+log stdout
+service integrated-vtysh-config
+!
+ip prefix-list TO-R4 seq 10 permit 10.1.0.1/32
+ip prefix-list FROM-R4 seq 10 permit 10.2.0.1/32
+!
+interface eth1
+ ip router isis CORE
+ isis network point-to-point
+exit
+!
+interface eth2
+ ip router isis CORE
+ isis network point-to-point
+exit
+!
+router bgp 65001
+ bgp router-id 1.1.1.1
+ neighbor 10.0.14.2 remote-as 65002
+ !
+ address-family ipv4 unicast
+  network 10.1.0.1/32
+  neighbor 10.0.14.2 prefix-list FROM-R4 in
+  neighbor 10.0.14.2 prefix-list TO-R4 out
+ exit-address-family
+exit
+!
+router ospf
+ ospf router-id 1.1.1.1
+ network 10.0.12.0/30 area 0
+ network 10.0.13.0/30 area 0
+ network 10.1.0.1/32 area 0
+exit
+!
+router isis CORE
+ is-type level-2-only
+ net 49.0001.0000.0000.0001.00
+exit
+!
+router pim
+ no autorp discovery
+exit
+!

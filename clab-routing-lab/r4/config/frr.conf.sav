@@ -1,0 +1,42 @@
+frr version 10.7.1_git
+frr defaults traditional
+hostname r4
+domainname localdomain
+log stdout
+service integrated-vtysh-config
+!
+ip prefix-list TO-R3 seq 10 permit 10.2.0.1/32
+ip prefix-list FROM-R3 seq 10 permit 10.1.0.1/32
+ip prefix-list FROM-R1 seq 10 permit 10.1.0.1/32
+ip prefix-list TO-R1 seq 10 permit 10.2.0.1/32
+!
+route-map PREFER-R1 permit 10
+ match ip address prefix-list FROM-R1
+ set local-preference 200
+exit
+!
+route-map PREFER-R3 permit 10
+ match ip address prefix-list FROM-R3
+ set local-preference 100
+exit
+!
+router bgp 65002
+ bgp router-id 4.4.4.4
+ neighbor 10.0.14.1 remote-as 65001
+ neighbor 10.0.34.1 remote-as 65001
+ !
+ address-family ipv4 unicast
+  network 10.2.0.1/32
+  neighbor 10.0.14.1 prefix-list FROM-R1 in
+  neighbor 10.0.14.1 prefix-list TO-R1 out
+  neighbor 10.0.14.1 route-map PREFER-R1 in
+  neighbor 10.0.34.1 prefix-list FROM-R3 in
+  neighbor 10.0.34.1 prefix-list TO-R3 out
+  neighbor 10.0.34.1 route-map PREFER-R3 in
+ exit-address-family
+exit
+!
+router pim
+ no autorp discovery
+exit
+!

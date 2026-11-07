@@ -1,0 +1,21 @@
+---
+r1:
+    username: admin
+    password: admin
+    platform: frr
+    hostname: 172.20.20.2
+r2:
+    username: admin
+    password: admin
+    platform: frr
+    hostname: 172.20.20.3
+r3:
+    username: admin
+    password: admin
+    platform: frr
+    hostname: 172.20.20.4
+r4:
+    username: admin
+    password: admin
+    platform: frr
+    hostname: 172.20.20.5

@@ -1,0 +1,254 @@
+{
+  "name": "routing-lab",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-960f78d18828",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "external-access": true,
+        "ipam": {
+          "provider": "containerlab"
+        }
+      }
+    }
+  },
+  "ssh-pub-keys": [],
+  "nodes": {
+    "r1": {
+      "index": "0",
+      "shortname": "r1",
+      "longname": "clab-routing-lab-r1",
+      "fqdn": "r1.routing-lab.io",
+      "group": "",
+      "labdir": "/home/ahmed/network-routing-lab/clab-routing-lab/r1",
+      "kind": "frr",
+      "image": "quay.io/frrouting/frr:containerlab-10.7.1",
+      "mgmt-net": "clab",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-960f78d18828",
+        "clab-node-group": "",
+        "clab-node-kind": "frr",
+        "clab-node-lab-dir": "/home/ahmed/network-routing-lab/clab-routing-lab/r1",
+        "clab-node-longname": "clab-routing-lab-r1",
+        "clab-node-name": "r1",
+        "clab-node-type": "",
+        "clab-owner": "ahmed",
+        "clab-topo-file": "/home/ahmed/network-routing-lab/lab.clab.yml",
+        "containerlab": "routing-lab"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 22,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "r2": {
+      "index": "1",
+      "shortname": "r2",
+      "longname": "clab-routing-lab-r2",
+      "fqdn": "r2.routing-lab.io",
+      "group": "",
+      "labdir": "/home/ahmed/network-routing-lab/clab-routing-lab/r2",
+      "kind": "frr",
+      "image": "quay.io/frrouting/frr:containerlab-10.7.1",
+      "mgmt-net": "clab",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-960f78d18828",
+        "clab-node-group": "",
+        "clab-node-kind": "frr",
+        "clab-node-lab-dir": "/home/ahmed/network-routing-lab/clab-routing-lab/r2",
+        "clab-node-longname": "clab-routing-lab-r2",
+        "clab-node-name": "r2",
+        "clab-node-type": "",
+        "clab-owner": "ahmed",
+        "clab-topo-file": "/home/ahmed/network-routing-lab/lab.clab.yml",
+        "containerlab": "routing-lab"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 22,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "r3": {
+      "index": "2",
+      "shortname": "r3",
+      "longname": "clab-routing-lab-r3",
+      "fqdn": "r3.routing-lab.io",
+      "group": "",
+      "labdir": "/home/ahmed/network-routing-lab/clab-routing-lab/r3",
+      "kind": "frr",
+      "image": "quay.io/frrouting/frr:containerlab-10.7.1",
+      "mgmt-net": "clab",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-960f78d18828",
+        "clab-node-group": "",
+        "clab-node-kind": "frr",
+        "clab-node-lab-dir": "/home/ahmed/network-routing-lab/clab-routing-lab/r3",
+        "clab-node-longname": "clab-routing-lab-r3",
+        "clab-node-name": "r3",
+        "clab-node-type": "",
+        "clab-owner": "ahmed",
+        "clab-topo-file": "/home/ahmed/network-routing-lab/lab.clab.yml",
+        "containerlab": "routing-lab"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 22,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "r4": {
+      "index": "3",
+      "shortname": "r4",
+      "longname": "clab-routing-lab-r4",
+      "fqdn": "r4.routing-lab.io",
+      "group": "",
+      "labdir": "/home/ahmed/network-routing-lab/clab-routing-lab/r4",
+      "kind": "frr",
+      "image": "quay.io/frrouting/frr:containerlab-10.7.1",
+      "mgmt-net": "clab",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-960f78d18828",
+        "clab-node-group": "",
+        "clab-node-kind": "frr",
+        "clab-node-lab-dir": "/home/ahmed/network-routing-lab/clab-routing-lab/r4",
+        "clab-node-longname": "clab-routing-lab-r4",
+        "clab-node-name": "r4",
+        "clab-node-type": "",
+        "clab-owner": "ahmed",
+        "clab-topo-file": "/home/ahmed/network-routing-lab/lab.clab.yml",
+        "containerlab": "routing-lab"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 22,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "r1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:f1:eb:61",
+          "peer": "z"
+        },
+        "z": {
+          "node": "r2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:39:bb:58",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "r2",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:d3:6b:5d",
+          "peer": "z"
+        },
+        "z": {
+          "node": "r3",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:19:c3:2e",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "r1",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:18:51:8e",
+          "peer": "z"
+        },
+        "z": {
+          "node": "r3",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:ba:66:16",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "r3",
+          "interface": "eth3",
+          "mac": "aa:c1:ab:80:5f:96",
+          "peer": "z"
+        },
+        "z": {
+          "node": "r4",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:b9:b0:e1",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "r1",
+          "interface": "eth3",
+          "mac": "aa:c1:ab:cc:71:b9",
+          "peer": "z"
+        },
+        "z": {
+          "node": "r4",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:bf:cc:ec",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}
