@@ -1,6 +1,7 @@
 # Network Routing and Resilience Lab
 
-![Containerlab topology viewer](docs/images/containerlab-topology.png)
+<img width="1774" height="1282" alt="image" src="https://github.com/user-attachments/assets/d76017be-a596-4b45-8ce2-147deeb6de78" />
+
 
 *Replace this image with a screenshot of the live Containerlab topology viewer.*
 
